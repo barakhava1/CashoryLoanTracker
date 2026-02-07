@@ -18,14 +18,7 @@ struct CashoryApp: App {
     }
     
     private func handleScenePhaseChange(_ newPhase: ScenePhase) {
-        switch newPhase {
-        case .active:
-            PushNotificationService.shared.clearBadgeCount()
-        case .inactive, .background:
-            break
-        @unknown default:
-            break
-        }
+
     }
 }
 
