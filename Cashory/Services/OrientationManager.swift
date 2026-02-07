@@ -25,7 +25,6 @@ class AppDelegate: NSObject, UIApplicationDelegate {
     
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
-        PushNotificationService.shared.initialize()
         return true
     }
     
@@ -35,12 +34,6 @@ class AppDelegate: NSObject, UIApplicationDelegate {
             return .all
         }
         return .portrait
-    }
-    
-    func application(_ application: UIApplication,
-                     didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-        let tokenString = deviceToken.map { String(format: "%02.2hhx", $0) }.joined()
-        print("APNs Device Token: \(tokenString)")
     }
     
     func application(_ application: UIApplication,
